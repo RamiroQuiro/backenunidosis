@@ -8,14 +8,13 @@ app=FastAPI()
 origins=[
     'http://localhost:8000',
     'http://localhost:3000',
-    'http://172.16.3.94:3000',
-    'http://172.16.3.94:8000',
+    'http://172.16.3.94:3000/dashboard',
     'http://localhost:3000/dashboard'
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=['*'],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
